@@ -7,8 +7,8 @@ controlling the individual image-tools will be realised with a simple graphical 
 ## Image color model conversion
 Images can be changed within different color models.  
 Implemented color models:
-- [ ] RGB
-- [ ] RGBA
+- [x] RGB
+- [x] RGBA
 - [ ] CMY
 - [ ] CMYK
 - [ ] CIELAB
