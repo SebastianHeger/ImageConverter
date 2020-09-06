@@ -16,14 +16,15 @@ Implemented color models:
 ## Image type conversion
 Image types can be changed into various types.  
 Implemented types:
-- [ ] PNG
-- [ ] BMP
-- [ ] JPG
+- [x] PNG
+- [x] BMP
+- [x] JPG
+- [ ] SVG
 
 ## Image editing
 Editing of images with various filters is often useful.  
 Impelemented editing tools:
-- [ ] Remove image background (e. g. clear a white background of a picture)
+- [x] Remove image background (e. g. clear a white background of a picture)
 - [ ] Greyscale filtering
 - [ ] Sepia filtering
 - [ ] Insta-filter
