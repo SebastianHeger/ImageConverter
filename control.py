@@ -6,8 +6,15 @@ from Conversions import colorModels
 
 
 class Picture:
-    def __init__(self, path):
-        self.image_original = Image.open(path, 'r')
+    def __init__(self, path_folder, filename):
+        self.path_folder = path_folder
+        filename_details = filename.split('.')
+        self.filename_original = ''.join(filename_details[0:-1])
+        self.filetype_original = filename_details[-1]
+        self.image_original = Image.open(
+            (self.path_folder / (self.filename_original + '.' + self.filetype_original)),
+            'r'
+        )
         # self.width_original, self.height_original = self.image_original.size
         self.image_converted = None
 
@@ -23,9 +30,17 @@ class Picture:
         elif model_type == 'LAB' or model_type == 'lab':
             self.image_converted = colorModels.conversion_to_rgba(self.image_original)
 
+    def save_image(self, file_type):
+        self.image_converted.save(
+            self.path_folder.parent / 'Output' / (self.filename_original + '.' + file_type)
+        )
+
 
 if __name__ == '__main__':
-    file_path = Path('Input')
-    file_path_content = file_path.glob('**/*')
-    files = [file for file in file_path_content if file.is_file()]
-    pictures = [Picture(path=file) for file in files]
+    folder_path = Path('Input')
+    folder_path_content = folder_path.glob('**/*')
+    files = [file.name for file in folder_path_content if file.is_file()]
+    pictures = [Picture(
+        path_folder=folder_path,
+        filename=file
+        ) for file in files]
