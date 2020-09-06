@@ -9,9 +9,9 @@ Images can be changed within different color models.
 Implemented color models:
 - [x] RGB
 - [x] RGBA
-- [ ] CMY
-- [ ] CMYK
-- [ ] CIELAB
+- [x] CMYK
+- [x] HSV
+- [x] CIELAB
 
 ## Image type conversion
 Image types can be changed into various types.  
