@@ -2,7 +2,8 @@
 Provides various tools to edit and convert images.
 
 ## GUI
-controlling the individual image-tools will be realised with a simple graphical user interface.
+- [ ] Tkinter-GUI
+- [ ] Web-interface
 
 ## Image color model conversion
 Images can be changed within different color models.  
