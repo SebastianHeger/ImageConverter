@@ -31,16 +31,24 @@ class Picture:
             self.image_converted = colorModels.conversion_to_rgba(self.image_original)
 
     def save_image(self, file_type):
-        self.image_converted.save(
-            self.path_folder.parent / 'Output' / (self.filename_original + '.' + file_type)
-        )
+        file_type_list = [
+            'jpg', 'JPG', 'jpeg', 'JPEG', 'bmp', 'BMP', 'png', 'PNG'
+        ]
+        if file_type in file_type_list:
+            self.image_converted.save(
+                self.path_folder.parent / 'Output' / (self.filename_original + '.' + file_type)
+            )
+        else:
+            print('File type is not supported.')
 
 
 if __name__ == '__main__':
     folder_path = Path('Input')
     folder_path_content = folder_path.glob('**/*')
     files = [file.name for file in folder_path_content if file.is_file()]
-    pictures = [Picture(
-        path_folder=folder_path,
-        filename=file
-        ) for file in files]
+    pictures = [
+        Picture(
+            path_folder=folder_path,
+            filename=file
+        ) for file in files
+    ]
