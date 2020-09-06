@@ -16,6 +16,12 @@ class Picture:
             self.image_converted = colorModels.conversion_to_rgb(self.image_original)
         elif model_type == 'RGBA' or model_type == 'rgba':
             self.image_converted = colorModels.conversion_to_rgba(self.image_original)
+        elif model_type == 'CMYK' or model_type == 'cmyk':
+            self.image_converted = colorModels.conversion_to_rgba(self.image_original)
+        elif model_type == 'HSV' or model_type == 'hsv':
+            self.image_converted = colorModels.conversion_to_rgba(self.image_original)
+        elif model_type == 'LAB' or model_type == 'lab':
+            self.image_converted = colorModels.conversion_to_rgba(self.image_original)
 
 
 if __name__ == '__main__':
